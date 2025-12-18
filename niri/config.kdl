@@ -121,9 +121,28 @@ overview {
 // See the binds section below for more spawn examples.
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+/*
 environment {
   XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORM "wayland"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  QT_QPA_PLATFORMTHEME "qt6ct"
+  QT_QPA_PLATFORMTHEME_QT6 "qt6ct" 
+  TERMINAL "kitty"
 }
+*/
+environment {
+  XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORM "wayland"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  QT_QPA_PLATFORMTHEME "qt6ct"
+  QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
+  TERMINAL "kitty"
+  LIBVA_DRIVER_NAME "nvidia"
+  __GLX_VENDOR_LIBRARY_NAME "nvidia"
+  NVD_BACKEND "direct"    
+}
+
 hotkey-overlay {
     skip-at-startup
 }
@@ -167,6 +186,9 @@ animations {
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 
+window-rule {
+    open-maximized-to-edges false
+}
 
 window-rule {
     // This regular expression is intentionally made as specific as possible,
