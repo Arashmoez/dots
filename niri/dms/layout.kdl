@@ -6,10 +6,11 @@ layout {
     }
 
     focus-ring {
-        width 2
+        width 3
     }
 }
 window-rule {
+    open-maximized-to-edges false
     geometry-corner-radius 12
     clip-to-geometry true
     tiled-state true
