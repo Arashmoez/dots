@@ -5,6 +5,7 @@
 config-notification {
     disable-failed
 }
+/*
 // Outputs from existing configuration
 output "HDMI-A-1" {
     mode "2560x1440@144"
@@ -15,7 +16,7 @@ output "HDMI-A-1" {
 output "eDP-1" {
     off
 }
-
+*/
 
 gestures {
     hot-corners {
@@ -92,7 +93,7 @@ layout {
     // `draw-border-with-background`.
     border {
         off
-        width 4
+        width 2
         active-color   "#707070"      // Neutral gray
         inactive-color "#d0d0d0"      // Light gray
         urgent-color   "#cc4444"      // Softer red
@@ -104,6 +105,17 @@ layout {
         color "#0007"
     }
     struts {
+    }
+    gaps 4
+
+    /*
+    border {
+        width 2
+    }
+    */
+
+    focus-ring {
+        width 3
     }
 }
 layer-rule {
@@ -150,7 +162,7 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     workspace-switch {
-        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
+        spring damping-ratio=0.6 stiffness=423 epsilon=0.0001
     }
     window-open {
         duration-ms 150
@@ -161,13 +173,13 @@ animations {
         curve "ease-out-quad"
     }
     horizontal-view-movement {
-        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+        spring damping-ratio=0.6 stiffness=423 epsilon=0.0001
     }
     window-movement {
-        spring damping-ratio=0.75 stiffness=323 epsilon=0.0001
+        spring damping-ratio=0.6 stiffness=323 epsilon=0.0001
     }
     window-resize {
-        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+        spring damping-ratio=0.6 stiffness=423 epsilon=0.0001
     }
     config-notification-open-close {
         spring damping-ratio=0.65 stiffness=923 epsilon=0.001
@@ -188,6 +200,10 @@ animations {
 
 window-rule {
     open-maximized-to-edges false
+    geometry-corner-radius 12
+    clip-to-geometry true
+    tiled-state true
+    draw-border-with-background false
 }
 
 window-rule {
@@ -259,6 +275,7 @@ recent-windows {
 
 // Include dms files
 include "dms/colors.kdl"
-include "dms/layout.kdl"
+// include "dms/layout.kdl"
 include "dms/alttab.kdl"
 include "dms/binds.kdl"
+include "dms/outputs.kdl"

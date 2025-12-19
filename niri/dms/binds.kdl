@@ -11,7 +11,7 @@ binds {
     Mod+B hotkey-overlay-title="Open Browser" { spawn "firefox"; }
     Mod+C hotkey-overlay-title="Open Code" { spawn "code"; }
     Mod+E hotkey-overlay-title="Open connection editor" { spawn "nm-connection-editor"; }
-    Mod+S hotkey-overlay-title="Open niri conf" { spawn "code ~/.config/niri/"; }
+    Mod+S hotkey-overlay-title="Open niri conf" { spawn "code" ".config/niri/"; }
     /*
     Mod+Space hotkey-overlay-title="Application Launcher" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
